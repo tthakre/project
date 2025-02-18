@@ -1,0 +1,24 @@
+## To Clone a branch Localy 
+git clone https://github.com/fhinkel/nodejs-hello-world.git
+
+#### To build the docker image 
+docker run -d --name sonarqube -p 9000:9000 sonarqube:lts-community
+
+#### Access the SonarQube on the server 
+http://<Host_IP>:9000
+
+## Default credentials:
+####    User: admin
+####    Password: admin
+
+## Set Up GitHub Secrets
+## Go to GitHub Repo → Settings → Secrets → Actions → Add
+####  SONAR_TOKEN → SonarQube Token
+####  DOCKER_USERNAME → Your Docker Hub username
+####  DOCKER_PASSWORD → Your Docker Hub password
+
+## To create a docker Repo follow the below cmd 
+docker login -u your-dockerhub-username -p your-dockerhub-password
+
+docker tag your-dockerhub-username/node-hello-world your-dockerhub-username/node-hello-world:latest
+
